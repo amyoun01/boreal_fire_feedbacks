@@ -1,6 +1,6 @@
 # boreal_fire_feedbacks
 
-### Contact: Adam Young, ayoung49@alaska.edu
+### Contact: Adam Young, ayoung49[at]alaska.edu
 
 This repository houses a collection of scripts that conducts an analysis aimed at characterizing how negative fire-vegetation feedbacks may moderate future climate-driven fire regime changes in boreal forest ecosystems of North America.
 
