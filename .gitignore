@@ -1,0 +1,6 @@
+.DS_Store
+py/.DS_Store
+py/.ipynb_checkpoints
+py/z_functions/.DS_Store
+py/z_functions/__pycache__
+py/z_ancillary_data
