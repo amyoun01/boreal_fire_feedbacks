@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 
+# ------------------------------------------------------------------------------
 # clip_cmip.py
+# ------------------------------------------------------------------------------
 #
 # This script re-organizes the downloaded netcdf files into a standardized 
 # format for use in ultimately calculating CFFDRS indices. The primary 
@@ -13,9 +15,12 @@
 #     - Setting time units to 'days since 1850-01-01'    
 #     - Converting units on data variables ('e.g., K to C)
 #     - Export these newly organized datasets at nc files
+#
+# ------------------------------------------------------------------------------
 
-
+# ------------------------------------------------------------------------------
 # Import required modules
+# ------------------------------------------------------------------------------
 import os, sys
 import pickle
 import argparse
@@ -25,21 +30,26 @@ import numpy as np
 import xarray as xr
 from tqdm import tqdm
 
-
-# Get directory name of current clip_cmip.py file 
-abs_path = os.path.dirname(os.path.abspath(__file__))
+# ------------------------------------------------------------------------------
+# Get directory name of current clip_cmip.py file
 # Then use this directory name to import custom utils functions
+# ------------------------------------------------------------------------------
+abs_path = os.path.dirname(os.path.abspath(__file__))
 sys.path.append(os.path.join(abs_path,"z_functions"))
 import z_utils as h
 
+# ------------------------------------------------------------------------------
 # Load standardized dictionary for variables used ifn this project
+# ------------------------------------------------------------------------------
 standard_dict_file = os.path.join(abs_path,
                                 "z_ancillary_data",
                                 "standard_variable_names.pickle")
 with open(standard_dict_file,"rb") as f:
     standard_variable_dict = pickle.load(f)
 
+# ------------------------------------------------------------------------------
 # Arguments to parse from command line
+# ------------------------------------------------------------------------------
 parser = argparse.ArgumentParser(description='Clip global CMIP6 output to user\
 defined spatial and temporal limits.')
 parser.add_argument('--src-dir','-s',type=str,
@@ -88,9 +98,6 @@ file_id = h.overlap(start_and_end_dates,
                     date_lims,
                     format='%Y%m%d',
                     index_return=True)
-
-# if verbose:
-#     print("Starting to process %s data ..." % os.getenv("GCM"))
 
 # For each file that overlaps with time period of interest ...
 for f in tqdm(range(len(file_id)),disable=not verbose): 
@@ -189,5 +196,4 @@ for f in tqdm(range(len(file_id)),disable=not verbose):
                                         var_name: {'dtype': 'single',
                                                    '_FillValue': -9999.}})
 
-# if verbose:
-#     print("Finished %s!\n\n" % os.getenv("GCM"))
+# End of script ----------------------------------------------------------------

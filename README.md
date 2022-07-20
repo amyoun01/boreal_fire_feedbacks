@@ -1,5 +1,7 @@
 # boreal_fire_feedbacks
 
+### Contact: Adam Young, ayoung49@alaska.edu
+
 This repository houses a collection of scripts that conducts an analysis aimed at characterizing how negative fire-vegetation feedbacks may moderate future climate-driven fire regime changes in boreal forest ecosystems of North America.
 
 ## Organization
@@ -20,3 +22,6 @@ sh/2_organize_era5_data.sh # Read, extract, and organize ERA5 climate data
 sh/3_organize_cmip6_data.sh # Organize CMIP5 GCM output
 # etc ...
 ```
+
+This README file and parts of the analysis will be regularly updated and added as this project
+continues.
