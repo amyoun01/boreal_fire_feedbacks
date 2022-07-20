@@ -17,9 +17,9 @@ R/
 While this analysis is primarily conducted using Python 3.8, there are some additional statistical analyses run in R. Furthermore, we use shell scripts as a wrapper to independently organize and run different segments of the analysis, example:
 
  ```bash
-sh/1_organize_fire_data.sh # Convert fire perimiter shapefiles into raster datasets
-sh/2_organize_era5_data.sh # Read, extract, and organize ERA5 climate data
-sh/3_organize_cmip6_data.sh # Organize CMIP5 GCM output
+$ sh/1_organize_fire_data.sh # Convert fire perimiter shapefiles into raster datasets
+$ sh/2_organize_era5_data.sh # Read, extract, and organize ERA5 climate data
+$ sh/3_organize_cmip6_data.sh # Organize CMIP5 GCM output
 # etc ...
 ```
 
